@@ -12,7 +12,7 @@ function Comments({ data, setData }) {
   };
 
   const handleFormatComment = (comment) => {
-    return comment && comment.trim() === '' ? 'N/A' : comment;
+    return comment && comment.trim() !== '' ? comment : 'N/A';
   };
 
   return (
