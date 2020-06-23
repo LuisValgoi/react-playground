@@ -1,18 +1,13 @@
 import React from 'react';
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Alert from 'react-bootstrap/Alert';
+import Comment from '../components/Comment';
 
 function Comments({ data, setData }) {
   const handleOnDeletePress = _index => {
     const castedData = data.filter((comment, index) => index !== _index);
     setData(castedData);
-  };
-
-  const handleFormatComment = (comment) => {
-    return comment && comment.trim() !== '' ? comment : 'N/A';
   };
 
   return (
@@ -26,19 +21,7 @@ function Comments({ data, setData }) {
       )}
 
       {data.map((comment, index) => {
-        return (
-          <Card key={index} className='mb-3'>
-            <Card.Body>
-              <Button className="float-right" onClick={() => handleOnDeletePress(index)} variant="link">Delete</Button>
-              <Row className="justify-content-md-start">
-                <Card.Title>Author: {comment.author}</Card.Title>
-              </Row>
-              <Row>
-                <Card.Text>Comment: {handleFormatComment(comment.comment)}</Card.Text>
-              </Row>
-            </Card.Body>
-          </Card>
-        );
+        return <Comment key={index} index={index} comment={comment} handleOnDeletePress={handleOnDeletePress} />
       })}
     </Container>
   );
