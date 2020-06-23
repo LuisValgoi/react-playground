@@ -2,7 +2,7 @@
 Project just for playing w/ react syntax
 
 # Content
-![image](https://im4.ezgif.com/tmp/ezgif-4-6bdec630443f.gif)
+![image](https://media2.giphy.com/media/cjKcdeBOnBKrKVlXhy/giphy.gif)
 
 ## Available Scripts
 
